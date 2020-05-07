@@ -1,10 +1,12 @@
-require('dotenv').config({path:'/config/config.env'})
+require('dotenv').config()
+const path = require('path');
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 var AYLIENTextAPI = require('aylien_textapi')
 const app = express();
 
 
+console.log(process.env.AYLIEN_APP_KEY)
 
 
 var textapi = new AYLIENTextAPI({
