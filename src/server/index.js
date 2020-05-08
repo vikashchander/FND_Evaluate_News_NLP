@@ -24,6 +24,16 @@ app.get('/', function (req, res) {
     //res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
+app.post('/data', (req,res)=>{
+    const {url} =req.url;
+    textapi.sentiment({url}, function(error, response) {
+        if (error === null) {
+          console.log(response);
+        }
+      });
+      res.json(response);
+})
+
 // designates what port the app will listen to for incoming requests
 app.listen(8080, function () {
     console.log('Example app listening on port 8080!')

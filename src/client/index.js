@@ -1,7 +1,24 @@
-import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
+import { isUrlValid } from "./js/inputChecker";
+import { handleSubmitBtn } from "./js/formHandler";
 
-console.log(checkForName);
+//import "./styles/style.scss";
 
-alert("I EXIST")
-console.log("CHANGE!!");
+const form = document.querySelector("#main-form");
+const urlInput = document.querySelector("#url");
+const submitBtn = document.querySelector("#main-form input[type=submit]");
+const errorContainer = document.querySelector("#main-form .error");
+
+urlInput.addEventListener("keyup", e => {
+  if (isUrlValid(e.target.value)) errorContainer.classList.add("hidden");
+  else errorContainer.classList.remove("hidden");
+});
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const url = urlInput.value;
+
+  if (isUrlValid(url)) {
+    submitBtn.value = "Loading.......";
+    handleSubmitBtn(url, submitBtn);
+  }
+});
