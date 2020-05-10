@@ -1,3 +1,3 @@
-const SIMPLE_URL_REGEX = /^(https?:\/\/)?(\w+\.)?(\w+\.)(\w+)([\w\?\&\=\-]?)*(\/[\w\?\&\=\-]*)*$/g;
+const URL_REGEX =/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/igm;
 
-export const isUrlValid = url => !!url.match(SIMPLE_URL_REGEX);
+export const isInputValid = url => !!url.match(URL_REGEX);
