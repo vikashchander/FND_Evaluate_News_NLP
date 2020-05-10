@@ -5,7 +5,6 @@ import { handleSubmitBtn } from "./js/formHandler";
 
 const form = document.querySelector("#main-form");
 const urlInput = document.querySelector("#url");
-const submitBtn = document.querySelector("#main-form input[type=submit]");
 const errorContainer = document.querySelector("#main-form .error");
 
 urlInput.addEventListener("keyup", e => {
@@ -18,7 +17,6 @@ form.addEventListener("submit", e => {
   const url = urlInput.value;
 
   if (isUrlValid(url)) {
-    submitBtn.value = "Loading.......";
-    handleSubmitBtn(url, submitBtn);
+    handleSubmitBtn(url);
   }
 });
