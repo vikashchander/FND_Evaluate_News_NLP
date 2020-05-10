@@ -1,7 +1,6 @@
 import { isUrlValid } from "./js/inputChecker";
 import { handleSubmitBtn } from "./js/formHandler";
-
-//import "./styles/style.scss";
+import "./styles/style.scss";
 
 const form = document.querySelector("#main-form");
 const urlInput = document.querySelector("#url");
