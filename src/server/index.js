@@ -31,7 +31,7 @@ app.post('/data', (req,res)=>{
    
     textapi.sentiment({ url: req.body.url}, function(error, response) {
         if(error === null){
-            console.log(response);
+           // console.log(response);
             res.send(response);
         }else{
            // console.log(error);
@@ -45,6 +45,3 @@ app.listen(8080, function () {
     console.log('Example app listening on port 8080!')
 })
 
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})

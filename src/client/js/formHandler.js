@@ -1,4 +1,4 @@
-import { isUrlValid } from "./inputChecker";
+import { isInputValid } from "./inputChecker";
 const polarity= document.getElementById('polarity');
 const polConfidence= document.getElementById('polConfidence');
 const subjectivity= document.getElementById('polConfidence');
@@ -7,7 +7,7 @@ const textData = document.getElementById('textData')
 export function handleSubmitBtn(){
   let url = document.getElementById('url').value;
  // console.log(url);
-  if(isUrlValid(url)){
+  if(isInputValid(url)){
      polarity.innerHTML='';
      polConfidence.innerHTML='';
      subjectivity.innerHTML='';
@@ -44,7 +44,7 @@ const postData = async(url = '') => {
 
 
 function updateUI(data) {
-  console.log('vikash',data.text)
+  //console.log(data);
   polarity.innerHTML = `Polarity: ${data.polarity}`;
   polConfidence.innerHTML = `Polarity Confidence: ${data.polarity_confidence}`;
   subjectivity.innerHTML = `Subjectivity: ${data.subjectivity}`;
