@@ -9,10 +9,6 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
-// console.log(process.env.AYLIEN_APP_KEY)
-// console.log(process.env.AYLIEN_APP_ID)
-
-
 var textapi = new AYLIENTextAPI({
     application_id:process.env.AYLIEN_APP_ID,
     application_key:process.env.AYLIEN_APP_KEY
@@ -24,7 +20,7 @@ app.use(express.static('dist'))
 
 app.get('/', function (req, res) {
      res.sendFile('dist/index.html')
-    //res.sendFile(path.resolve('src/client/views/index.html'))
+    
 })
 
 app.post('/data', (req,res)=>{
