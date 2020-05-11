@@ -1,7 +1,6 @@
 require('dotenv').config()
 const path = require('path');
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 var AYLIENTextAPI = require('aylien_textapi')
@@ -37,7 +36,7 @@ app.post('/data', (req,res)=>{
      
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!')
+app.listen(process.env.PORT, function () {
+    console.log(`Example app listening on port ${process.env.PORT}!`)
 })
 
